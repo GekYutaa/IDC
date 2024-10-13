@@ -1,27 +1,25 @@
 <?php
-// Menampilkan pesan
-echo "Hello, World!";
+class barang {
+    public string $barcode;
+    public string $nama;
+    public int $stok;
 
-// Definisi variabel
-$nama = "Alice";
-$umur = 25;
+    public function __construct($barcode, $nama, $stok) {
+        $this->barcode = $barcode;
+        $this->nama = $nama;
+        $this->stok = $stok;
 
-// Menampilkan informasi
-echo "<br>Nama: $nama";
-echo "<br>Umur: $umur tahun";
+    }
+    public function isHabis() {
+        if ($this->stok <= 10) {
+            return "($this->nama) habis loh"; 
+        }
 
-// Operasi matematika
-$a = 10;
-$b = 5;
-$jumlah = $a + $b;
-$selisih = $a - $b;
-$perkalian = $a * $b;
-$pembagian = $a / $b;
+        return "barang ($this->nama) masih banyak";
+    }
+}
 
-// Menampilkan hasil operasi
-echo "<br><br>Operasi Matematika:";
-echo "<br>Penjumlahan: $a + $b = $jumlah";
-echo "<br>Pengurangan: $a - $b = $selisih";
-echo "<br>Perkalian: $a * $b = $perkalian";
-echo "<br>Pembagian: $a / $b = $pembagian";
+$buah = new Barang("123", "buah", 7);
+echo $buah->isHabis();
+
 ?>
