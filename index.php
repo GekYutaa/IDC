@@ -19,7 +19,7 @@ class barang {
     }
 }
 
-$buah = new Barang("123", "buah", 7);
+$buah = new Barang("123", "buah", 20);
 echo $buah->isHabis();
 
 ?>
